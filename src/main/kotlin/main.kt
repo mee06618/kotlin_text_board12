@@ -37,11 +37,11 @@ fun main() {
     println("== 게시판 관리 프로그램 시작 ==")
 
     // 가장 마지막에 입력된 게시물 번호
-
+    makeTestArticles()
 
 
     loop@ while (true) {
-        makeTestArticles()
+
         print("명령어) ")
         val command =readLineSplit()
 
@@ -65,8 +65,8 @@ fun main() {
                 articlesLastId = id
             }
             "articlelist" -> {
-                articles.reversed()
-                for ( i in (command[2].toInt()-1)*10 until command[2].toInt()*10) {
+
+                for ( i in (100-(command[2].toInt()-1)*10)-1 downTo (100-command[2].toInt()*10)) {
                     println("${articles[i].id} / ${articles[i].title} / ${articles[i].body} / ${articles[i].regDate} / ${articles[i].updateDate}")
                 }
             }
