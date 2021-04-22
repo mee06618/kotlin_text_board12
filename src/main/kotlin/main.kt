@@ -65,9 +65,9 @@ fun main() {
                 articlesLastId = id
             }
             "articlelist" -> {
-
-                for ( i in (100-(command[2].toInt()-1)*10)-1 downTo (100-command[2].toInt()*10)) {
-                    println("${articles[i].id} / ${articles[i].title} / ${articles[i].body} / ${articles[i].regDate} / ${articles[i].updateDate}")
+                val temp = articles.reversed()
+                for ( i in ((command[2].toInt()-1)*10) .. (command[2].toInt()*10)) {
+                    println("${temp[i].id} / ${temp[i].title} / ${temp[i].body} / ${temp[i].regDate} / ${temp[i].updateDate}")
                 }
             }
 
